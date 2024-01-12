@@ -15,6 +15,8 @@ class BeritaModel extends Model
         'slug',
         'status',
         'user_id',
+        'tag_ids',
+        'kategori_ids',
     ];
 
     public function insertData($data)

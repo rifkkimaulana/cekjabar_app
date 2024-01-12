@@ -6,7 +6,7 @@ use CodeIgniter\Model;
 
 class UserModel extends Model
 {
-    protected $table = 'tb_berita';
+    protected $table = 'tb_user';
     protected $primaryKey = 'id';
     protected $allowedFields = [
         'nama_depan',
@@ -17,6 +17,7 @@ class UserModel extends Model
         'telpon',
         'alamat',
         'hak_akses',
+        'user_foto',
     ];
 
     public function insertData($data)
