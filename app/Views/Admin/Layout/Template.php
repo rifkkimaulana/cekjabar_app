@@ -42,7 +42,7 @@
 
 </head>
 
-<body class="hold-transition sidebar-mini layout-fixed">
+<body class="hold-transition sidebar-mini layout-fixed text-sm">
     <div class="wrapper">
 
         <?= $this->include('Admin/Layout/Navbar'); ?>
@@ -135,8 +135,8 @@
                     previous: "Previous",
                 },
             },
-            lengthMenu: [5, 10, 50, 100, 500],
-            pageLength: 5,
+            lengthMenu: [10, 50, 100, 500],
+            pageLength: 10,
         });
 
         $("#selectLength").on("change", function() {

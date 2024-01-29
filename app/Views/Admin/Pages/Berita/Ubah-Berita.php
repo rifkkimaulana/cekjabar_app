@@ -32,8 +32,8 @@
                             <div class="form-group">
                                 <label for="status">Status:</label>
                                 <select class="form-control" id="status" name="status" required>
-                                    <option value="0" <?= ($berita['status'] == 0) ? 'selected' : ''; ?>>Draft</option>
-                                    <?php if ($berita['status'] === '1' || session('user_level') === 'administrator') { ?>
+                                    <option value="0" <?= $berita['status'] == 0 ? 'selected' : ''; ?>>Draft</option>
+                                    <?php if (session('hak_akses') === 'administrator') { ?>
                                         <option value="1" <?= ($berita['status'] == 1) ? 'selected' : ''; ?>>Published</option>
                                     <?php } ?>
                                 </select>

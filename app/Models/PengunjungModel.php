@@ -9,7 +9,6 @@ class PengunjungModel extends Model
     protected $table = 'tb_pengunjung';
     protected $primaryKey = 'id';
     protected $allowedFields = [
-        'user_id',
         'berita_id',
         'jumlah_kunjungan',
     ];
