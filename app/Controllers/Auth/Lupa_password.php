@@ -40,7 +40,4 @@ class Lupa_password extends BaseController
             return redirect()->to(base_url('lupa-password'));
         }
     }
-
-    //--------------------------------------------------------------------
-
 }

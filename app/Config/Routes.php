@@ -82,7 +82,9 @@ $routes->group('berita', ['namespace' => 'App\Controllers\Admin\Berita'], functi
 	$routes->get('tag/hapus/(:num)', 'Tag::hapus/$1');
 });
 
+// Menu Pengaturan Index
 $routes->group('pengaturan', ['namespace' => 'App\Controllers\Admin\Pengaturan'], function ($routes) {
+	// Sub Menu Manajemen Pengguna
 	$routes->get('pengguna', 'Pengguna::index');
 	$routes->post('pengguna/tambah', 'Pengguna::tambah');
 	$routes->post('pengguna/ubah', 'Pengguna::ubah');
