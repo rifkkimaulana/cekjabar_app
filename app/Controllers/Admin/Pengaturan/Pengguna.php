@@ -157,7 +157,4 @@ class Pengguna extends BaseController
 
         return redirect()->to(base_url('pengaturan/pengguna'))->with('success', 'Pengguna berhasil dihapus.');
     }
-
-    //--------------------------------------------------------------------
-
 }
