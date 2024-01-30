@@ -2,7 +2,6 @@
 <html lang="en">
 
 <head>
-
     <link rel="icon" href="<?= base_url('favicon.png'); ?>" type="image/x-icon">
     <link rel="shortcut icon" href="<?= base_url('favicon.png'); ?>" type="image/x-icon">
 
