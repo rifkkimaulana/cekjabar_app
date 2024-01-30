@@ -96,7 +96,4 @@ class Tag extends BaseController
 
         return redirect()->to(base_url('berita/tag'))->with('success', 'Tag Artikel berhasil diubah.');
     }
-
-    //--------------------------------------------------------------------
-
 }
