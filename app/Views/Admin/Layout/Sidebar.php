@@ -22,7 +22,9 @@ $segment2 = isset($segments[1]) ? $segments[1] : '';
             </div>
             <div class="info">
                 <a class="d-block"><?= $user['nama_depan'] . ' ' .  $user['nama_belakang']; ?></a>
+                <small class="text-white"><?= $user['hak_akses']; ?></small>
             </div>
+
         </div>
 
         <nav class="mt-1">

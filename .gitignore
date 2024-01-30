@@ -90,6 +90,9 @@ composer.lock
 # IDE / Development Files
 #-------------------------
 
+# Codeigniter Session
+cekjabar_sess_path/
+
 # Modules Testing
 _modules/*
 
