@@ -102,7 +102,4 @@ class Kategori extends BaseController
             return redirect()->to(base_url('berita/kategori'))->with('error', 'Kategori ini terkait dengan Berita.');
         }
     }
-
-    //--------------------------------------------------------------------
-
 }
