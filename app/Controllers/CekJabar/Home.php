@@ -58,7 +58,4 @@ class Home extends BaseController
 		];
 		return view('CekJabar/Pages/Home', $data);
 	}
-
-	//--------------------------------------------------------------------
-
 }
