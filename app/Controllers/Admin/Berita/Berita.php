@@ -236,7 +236,4 @@ class Berita extends BaseController
             return redirect()->to(base_url('berita/list'))->with('error', 'Berita ini terkait dengan Berita.');
         }
     }
-
-    //--------------------------------------------------------------------
-
 }
