@@ -58,4 +58,52 @@ class Home extends BaseController
 		];
 		return view('CekJabar/Pages/Home', $data);
 	}
+
+	public function detail()
+	{
+		$data = [
+			'title' => 'Contact'
+		];
+		return view('CekJabar/Pages/Post', $data);
+	}
+
+	public function search()
+	{
+		$data = [
+			'title' => 'Contact'
+		];
+		return view('CekJabar/Pages/Search', $data);
+	}
+
+	public function filter()
+	{
+		$data = [
+			'title' => 'Contact'
+		];
+		return view('CekJabar/Pages/Filter', $data);
+	}
+
+	public function contact()
+	{
+		$data = [
+			'title' => 'Contact'
+		];
+		return view('CekJabar/Pages/Contact', $data);
+	}
+
+	public function about()
+	{
+		$data = [
+			'title' => 'About'
+		];
+		return view('CekJabar/Pages/About', $data);
+	}
+
+	public function blank_pages()
+	{
+		$data = [
+			'title' => 'Halaman Tidak Ditemukan'
+		];
+		return view('CekJabar/Pages/404', $data);
+	}
 }

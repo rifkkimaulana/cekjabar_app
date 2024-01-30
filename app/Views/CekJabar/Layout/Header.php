@@ -1,95 +1,105 @@
-<nav class="navbar navbar-toggleable-md navbar-inverse fixed-top bg-inverse">
-    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <a class="navbar-brand" href="<?= base_url('/'); ?>"><img src="<?= base_url('assets/cekjabar/images/version/cekjabar-logo.png'); ?>" alt=""></a>
-    <div class="collapse navbar-collapse" id="navbarCollapse">
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item">
-                <a class="nav-link" href="<?= base_url('/'); ?>">Home</a>
-            </li>
-            <li class="nav-item dropdown has-submenu menu-large hidden-md-down hidden-sm-down hidden-xs-down">
-                <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Berita</a>
-                <ul class="dropdown-menu megamenu" aria-labelledby="dropdown01">
-                    <li>
-                        <div class="container">
-                            <div class="mega-menu-content clearfix">
-                                <div class="tab">
-                                    <button class="tablinks active" onclick="openCategory(event, 'cat01')">Science</button>
-                                    <button class="tablinks" onclick="openCategory(event, 'cat02')">Technology</button>
-                                </div>
-
-                                <div class="tab-details clearfix">
-                                    <div id="cat01" class="tabcontent active">
-                                        <div class="row">
-                                            <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
-                                                <div class="blog-box">
-                                                    <div class="post-media">
-                                                        <a href="tech-single.html" title="">
-                                                            <img src="<?= base_url('assets/cekjabar/upload/tech_menu_01.jpg'); ?>" alt="" class="img-fluid">
-                                                            <div class="hovereffect">
-                                                            </div>
-                                                            <span class="menucat">Science</span>
-                                                        </a>
-                                                    </div>
-                                                    <div class="blog-meta">
-                                                        <h4><a href="tech-single.html" title="">Top 10+ care advice for your toenails</a></h4>
-                                                    </div>
-                                                </div>
+<div class="logo_area">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 align-self-center">
+                <div class="logo4">
+                    <a href="index.html">
+                        <img src="assets/cekjabar/img/logo/logo41.png" alt="">
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-9 align-self-center">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="topbar">
+                            <div class="row">
+                                <div class="col-md-8 align-self-center">
+                                    <div class="trancarousel_area">
+                                        <p class="trand">Tranding</p>
+                                        <div class="trancarousel owl-carousel nav_style1">
+                                            <div class="trancarousel_item">
+                                                <p><a href="#">Top 10 Best Movies of 2018 So Far: Great Movies To Watch Now</a>
+                                                </p>
                                             </div>
-
-                                            <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
-                                                <div class="blog-box">
-                                                    <div class="post-media">
-                                                        <a href="tech-single.html" title="">
-                                                            <img src="<?= base_url('assets/cekjabar/upload/tech_menu_02.jpg'); ?>" alt="" class="img-fluid">
-                                                            <div class="hovereffect">
-                                                            </div>
-                                                            <span class="menucat">Science</span>
-                                                        </a>
-                                                    </div>
-                                                    <div class="blog-meta">
-                                                        <h4><a href="tech-single.html" title="">The secret of your beauty is handmade soap</a></h4>
-                                                    </div>
-                                                </div>
+                                            <div class="trancarousel_item">
+                                                <p><a href="#">Top 10 Best Movies of 2018 So Far: Great Movies To Watch Now</a>
+                                                </p>
+                                            </div>
+                                            <div class="trancarousel_item">
+                                                <p><a href="#">Top 10 Best Movies of 2018 So Far: Great Movies To Watch Now</a>
+                                                </p>
                                             </div>
                                         </div>
                                     </div>
-                                    <div id="cat02" class="tabcontent">
-                                        <div class="row">
-                                            <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
-                                                <div class="blog-box">
-                                                    <div class="post-media">
-                                                        <a href="tech-single.html" title="">
-                                                            <img src="<?= base_url('assets/cekjabar/upload/tech_menu_05.jpg'); ?>" alt="" class="img-fluid">
-                                                            <div class="hovereffect">
-                                                            </div>
-                                                            <span class="menucat">Technology</span>
-                                                        </a>
-                                                    </div>
-                                                    <div class="blog-meta">
-                                                        <h4><a href="tech-single.html" title="">2017 summer stamp will have design models here</a></h4>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                </div>
+                                <div class="col-md-4 align-self-center">
+                                    <div class="top_date_social text-right">
+                                        <div class="user3"> <i class="fal fa-user-circle"></i>
+                                        </div>
+                                        <div class="lang-3">
+                                            <ul>
+                                                <li><a href="<?= base_url('login'); ?>">Masuk</a></li>
+                                            </ul>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </li>
-                </ul>
-            </li>
-
-            <li class="nav-item">
-                <a class="nav-link" href="tech-contact.html">Contact Us</a>
-            </li>
-        </ul>
-        <ul class="navbar-nav mr-2">
-            <li class="nav-item">
-                <a class="nav-link" href="<?= base_url('dashboard'); ?>"><i class="fa fa-user"></i></a>
-            </li>
-        </ul>
+                    </div>
+                </div>
+                <div class="space-5"></div>
+                <div class="border4"></div>
+                <div class="space-20"></div>
+                <div class="row justify-content-end">
+                    <div class="space-5"></div>
+                    <div class="col-md-6 col-lg-5 align-self-center">
+                        <div class="v3datentemp">
+                            <div class="date4">
+                                <h5>Thursday <span>March 26, 2020</span></h5>
+                            </div>
+                            <div class="temp d-none d-lg-block">
+                                <div class="temp_wap">
+                                    <div class="temp_icon">
+                                        <img src="assets/cekjabarimg/icon/s4.png" alt="">
+                                    </div>
+                                    <h3 class="temp_count">13</h3>
+                                    <p>San Francisco</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 align-self-center fix_width_social">
+                        <div class="social4 text-right">
+                            <ul class="inline">
+                                <li><a href="<?= base_url('/'); ?>"><i class="fab fa-instagram"></i></a>
+                                </li>
+                                <li><a href="<?= base_url('/'); ?>"><i class="fab fa-facebook-f"></i></a>
+                                </li>
+                                <li><a href="<?= base_url('/'); ?>"><i class="fab fa-youtube"></i></a>
+                                </li>
+                                <li><a href="<?= base_url('/'); ?>"><i class="fab fa-instagram"></i></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-</nav>
+</div>
+<div class="searching_area">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10 m-auto text-center">
+                <div class="search_form4">
+                    <form action="#">
+                        <input type="search" placeholder="Search Here">
+                        <input type="submit" value="Search">
+                    </form>
+                    <div class="search4_close"> <i class="far fa-times"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

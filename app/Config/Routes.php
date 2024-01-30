@@ -35,6 +35,12 @@ $routes->setAutoRoute(true);
 // Dashboard Index
 $routes->group('/', ['namespace' => 'App\Controllers\CekJabar'], function ($routes) {
 	$routes->get('/', 'Home::index');
+	$routes->get('post', 'Home::detail');
+	$routes->get('contact', 'Home::contact');
+	$routes->get('about', 'Home::about');
+	$routes->get('blank_pages', 'Home::blank_pages');
+	$routes->get('search', 'Home::search');
+	$routes->get('filter', 'Home::filter');
 });
 
 // Authentication Index

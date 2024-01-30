@@ -1,72 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<!-- Basic -->
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-
-<!-- Mobile Metas -->
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-<!-- Site Metas -->
-<title><?= $title; ?></title>
-<meta name="keywords" content="">
-<meta name="description" content="">
-<meta name="author" content="">
-
-<!-- Site Icons -->
-<link rel="shortcut icon" href="<?= base_url('assets/cekjabar/images/favicon.ico'); ?>" type="image/x-icon" />
-<link rel="apple-touch-icon" href="<?= base_url('assets/cekjabar/images/apple-touch-icon.png'); ?>">
-
-<!-- Design fonts -->
-<link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
-
-<!-- Bootstrap core CSS -->
-<link href="<?= base_url('assets/cekjabar/css/bootstrap.css'); ?>" rel="stylesheet">
-
-<!-- FontAwesome Icons core CSS -->
-<link href="<?= base_url('assets/cekjabar/css/font-awesome.min.css'); ?>" rel="stylesheet">
-
-<!-- Custom styles for this template -->
-<link href="<?= base_url('assets/cekjabar/style.css'); ?>" rel="stylesheet">
-
-<!-- Responsive styles for this template -->
-<link href="<?= base_url('assets/cekjabar/css/responsive.css'); ?>" rel="stylesheet">
-
-<!-- Colors for this template -->
-<link href="<?= base_url('assets/cekjabar/css/colors.css'); ?>" rel="stylesheet">
-
-<!-- Version Tech CSS for this template -->
-<link href="<?= base_url('assets/cekjabar/css/version/tech.css'); ?>" rel="stylesheet">
-
-<!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
+<head>
+    <title><?= $title; ?></title>
+    <!-- META -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!--::::: FABICON ICON :::::::-->
+    <link rel="icon" href="<?= base_url('assets/cekjabar/img/icon/fabicon2.png'); ?>">
+    <!--::::: ALL CSS FILES :::::::-->
+    <link rel="stylesheet" href="<?= base_url('assets/cekjabar/css/plugins/bootstrap.min.css'); ?>">
+    <link rel="stylesheet" href="<?= base_url('assets/cekjabar/css/plugins/animate.min.css'); ?>">
+    <link rel="stylesheet" href="<?= base_url('assets/cekjabar/css/plugins/fontawesome.css'); ?>">
+    <link rel="stylesheet" href="<?= base_url('assets/cekjabar/css/plugins/modal-video.min.css'); ?>">
+    <link rel="stylesheet" href="<?= base_url('assets/cekjabar/css/plugins/owl.carousel.css'); ?>">
+    <link rel="stylesheet" href="<?= base_url('assets/cekjabar/css/plugins/slick.css'); ?>">
+    <link rel="stylesheet" href="<?= base_url('assets/cekjabar/css/plugins/stellarnav.css'); ?>">
+    <link rel="stylesheet" href="<?= base_url('assets/cekjabar/css/theme.css'); ?>">
 </head>
 
-<body>
-
-    <div id="wrapper">
-        <header class="tech-header header">
-            <div class="container-fluid">
-                <?= $this->include('CekJabar/Layout/Header'); ?>
-            </div>
-        </header>
-
-        <?= $this->renderSection('content'); ?>
-        <?= $this->include('CekJabar/Layout/Footer'); ?>
+<body class="theme-4">
+    <!--::::: PRELOADER START :::::::-->
+    <div class="preloader v4">
+        <div>
+            <div class="nb-spinner"></div>
+        </div>
     </div>
-    <!-- end wrapper -->
+    <!--::::: PRELOADER END :::::::-->
+    <?= $this->include('CekJabar/Layout/Header'); ?>
+    <?= $this->include('CekJabar/Layout/Menu'); ?>
+    <?= $this->renderSection('content'); ?>
+    <?= $this->include('CekJabar/Layout/Footer'); ?>
 
-    <!-- Core JavaScript
-    ================================================== -->
-    <script src="<?= base_url('assets/cekjabar/js/jquery.min.js'); ?>"></script>
-    <script src="<?= base_url('assets/cekjabar/js/tether.min.js'); ?>"></script>
-    <script src="<?= base_url('assets/cekjabar/js/bootstrap.min.js'); ?>"></script>
-    <script src="<?= base_url('assets/cekjabar/js/custom.js'); ?>"></script>
-
+    <!--::::: ALL JS FILES :::::::-->
+    <script src="<?= base_url('assets/cekjabar/js/plugins/jquery.2.1.0.min.js'); ?>"></script>
+    <script src="<?= base_url('assets/cekjabar/js/plugins/bootstrap.min.js'); ?>"></script>
+    <script src="<?= base_url('assets/cekjabar/js/plugins/jquery.nav.js'); ?>"></script>
+    <script src="<?= base_url('assets/cekjabar/js/plugins/jquery.waypoints.min.js'); ?>"></script>
+    <script src="<?= base_url('assets/cekjabar/js/plugins/jquery-modal-video.min.js'); ?>"></script>
+    <script src="<?= base_url('assets/cekjabar/js/plugins/owl.carousel.js'); ?>"></script>
+    <script src="<?= base_url('assets/cekjabar/js/plugins/popper.min.js'); ?>"></script>
+    <script src="<?= base_url('assets/cekjabar/js/plugins/circle-progress.js'); ?>"></script>
+    <script src="<?= base_url('assets/cekjabar/js/plugins/wow.min.js'); ?>"></script>
+    <script src="<?= base_url('assets/cekjabar/js/plugins/stellarnav.js'); ?>"></script>
+    <script src="<?= base_url('assets/cekjabar/js/plugins/slick.min.js'); ?>"></script>
+    <script src="<?= base_url('assets/cekjabar/js/main.js'); ?>"></script>
 </body>
 
 </html>
