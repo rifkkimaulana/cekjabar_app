@@ -18,7 +18,6 @@
         Login
     </button>
 </form>
-
 <hr>
 <div class="text-center">
     <a class="small" href="<?= base_url('lupa-password'); ?>">Lupa Password?</a>
