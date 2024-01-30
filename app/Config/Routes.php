@@ -58,9 +58,9 @@ $routes->group('/', ['namespace' => 'App\Controllers\Admin'], function ($routes)
 	$routes->get('error/access-denied', 'Dashboard::noAkses');
 });
 
-
 // Admin Berita Index
 $routes->group('berita', ['namespace' => 'App\Controllers\Admin\Berita'], function ($routes) {
+	// Sub Menu Berita
 	$routes->get('/', 'Berita::index');
 	$routes->get('tambah', 'Berita::tambah_view');
 	$routes->get('ubah/(:num)', 'Berita::ubah_view/$1');
@@ -69,11 +69,13 @@ $routes->group('berita', ['namespace' => 'App\Controllers\Admin\Berita'], functi
 	$routes->post('ubah', 'Berita::ubah');
 	$routes->get('hapus/(:num)', 'Berita::hapus/$1');
 
+	// Sub Menu Kategori
 	$routes->get('kategori', 'Kategori::index');
 	$routes->post('kategori/tambah', 'Kategori::tambah');
 	$routes->post('kategori/ubah', 'Kategori::ubah');
 	$routes->get('kategori/hapus/(:num)', 'Kategori::hapus/$1');
 
+	// Sub Mneu Tag
 	$routes->get('tag', 'Tag::index');
 	$routes->post('tag/tambah', 'Tag::tambah');
 	$routes->post('tag/ubah', 'Tag::ubah');
