@@ -31,17 +31,16 @@ $routes->setAutoRoute(true);
 
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
+
+// Dashboard Index
 $routes->group('/', ['namespace' => 'App\Controllers\CekJabar'], function ($routes) {
 	$routes->get('/', 'Home::index');
 });
 
-
+// Authentication Index
 $routes->group('/', ['namespace' => 'App\Controllers\Auth'], function ($routes) {
 	$routes->get('login', 'Login::index');
 	$routes->post('login', 'Login::login_post');
-
-	$routes->get('login-google', 'Google::googleAuth');
-	$routes->get('google/callback', 'Google::googleAuth_callback');
 
 	$routes->get('buat-akun', 'Daftar::index');
 	$routes->post('buat-akun-baru', 'Daftar::buat');
@@ -50,6 +49,8 @@ $routes->group('/', ['namespace' => 'App\Controllers\Auth'], function ($routes) 
 	$routes->post('lupa-password', 'Lupa_password::post');
 });
 
+
+// Admin Index
 $routes->group('/', ['namespace' => 'App\Controllers\Admin'], function ($routes) {
 	$routes->get('dashboard', 'Dashboard::index');
 	$routes->get('komentar', 'Komentar::index');
@@ -57,9 +58,11 @@ $routes->group('/', ['namespace' => 'App\Controllers\Admin'], function ($routes)
 	$routes->get('error/access-denied', 'Dashboard::noAkses');
 });
 
+
+// Admin Berita Index
 $routes->group('berita', ['namespace' => 'App\Controllers\Admin\Berita'], function ($routes) {
-	$routes->get('list', 'Berita::index');
-	$routes->get('tambah/view', 'Berita::tambah_view');
+	$routes->get('/', 'Berita::index');
+	$routes->get('tambah', 'Berita::tambah_view');
 	$routes->get('ubah/(:num)', 'Berita::ubah_view/$1');
 	$routes->get('list', 'Berita::index');
 	$routes->post('tambah', 'Berita::tambah');

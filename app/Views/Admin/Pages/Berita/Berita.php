@@ -8,7 +8,7 @@
                 <div class="card">
                     <div class="card-header">
                         <h3 class="card-title"><?= $title; ?></h3>
-                        <a class="btn btn-primary btn-sm float-right" href="<?= base_url('berita/tambah/view') ?>">
+                        <a class="btn btn-primary btn-sm float-right" href="<?= base_url('berita/tambah') ?>">
                             <i class="fas fa-plus"></i> Tambah Berita
                         </a>
                     </div>
