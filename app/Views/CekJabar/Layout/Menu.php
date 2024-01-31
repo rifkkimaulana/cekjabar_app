@@ -8,54 +8,26 @@
                         <div class="newsprk_nav stellarnav">
                             <ul id="newsprk_menu">
                                 <li><a href="<?= base_url('/'); ?>">Home </a></li>
-                                <li><a href="#">Kategori <i class="fal fa-angle-down"></i></a>
+                                <li><a href="javascript:void(0)">Kategori <i class="fal fa-angle-down"></i></a>
                                     <ul>
-                                        <li><a href="#">General Posts <i class="fal fa-angle-right"></i></a>
-                                            <ul>
-                                                <li><a href="post1.html">Post 1</a>
-                                                </li>
-                                                <li><a href="post2.html">Post 2</a>
-                                                </li>
-                                                <li><a href="post3.html">Post 3</a>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="#">Video Posts <i class="fal fa-angle-right"></i></a>
-                                            <ul>
-                                                <li><a href="video_post1.html">Video Style 1</a>
-                                                </li>
-                                                <li><a href="video_post2.html">Video Style 2</a>
-                                                </li>
-                                                <li><a href="video_post3.html">Video Style 3</a>
-                                                </li>
-                                            </ul>
-                                        </li>
-
-                                        <li><a href="#">Audio Posts <i class="fal fa-angle-right"></i></a>
-                                            <ul>
-                                                <li><a href="audio_post1.html">Audio Style 1</a>
-                                                </li>
-                                                <li><a href="audio_post2.html">Audio Style 2</a>
-                                                </li>
-                                                <li><a href="audio_post3.html">Audio Style 3</a>
-                                                </li>
-                                            </ul>
-
-                                        </li>
-                                        <li><a href="#">Sidebars <i class="fal fa-angle-right"></i></a>
-                                            <ul>
-                                                <li><a href="post1.html">Right Sidebar</a>
-                                                </li>
-                                                <li><a href="left_post2.html">Left Sidebar</a>
-                                                </li>
-                                                <li><a href="post2.html">No Sidebar <i class="fal fa-angle-right"></i></a>
-                                                    <ul>
-                                                        <li><a href="#">Simple menu</a></li>
-                                                    </ul>
-
-                                                </li>
-                                            </ul>
-                                        </li>
+                                        <?php foreach ($kategoriData->orderBy('RAND()')->findAll(10) as $kt) { ?>
+                                            <li>
+                                                <a href="<?= base_url('kategori/' . $kt['slug']); ?>">
+                                                    <?= $kt['nama_kategori']; ?>
+                                                </a>
+                                            </li>
+                                        <?php } ?>
+                                    </ul>
+                                </li>
+                                <li><a href="javascript:void(0)">Tags <i class="fal fa-angle-down"></i></a>
+                                    <ul>
+                                        <?php foreach ($tagData->orderBy('RAND()')->findAll(10) as $tag) { ?>
+                                            <li>
+                                                <a href="<?= base_url('tag/' . $tag['slug']); ?>">
+                                                    <?= '#' . $tag['nama_tag']; ?>
+                                                </a>
+                                            </li>
+                                        <?php } ?>
                                     </ul>
                                 </li>
                                 <li><a href="<?= base_url('contact'); ?>">Contact</a></li>

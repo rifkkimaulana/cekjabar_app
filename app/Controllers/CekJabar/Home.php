@@ -2,11 +2,6 @@
 
 namespace App\Controllers\CekJabar;
 
-use App\Models\BeritaModel;
-use App\Models\KategoriModel;
-use App\Models\PengunjungModel;
-use App\Models\UserModel;
-
 class Home extends BaseController
 {
 	public function index()
@@ -27,34 +22,17 @@ class Home extends BaseController
 			return $tanggalIndonesia;
 		};
 
-		$beritaModel = new BeritaModel();
-
-		$beritaData = $beritaModel->where('status', '1')->orderBy('created_at', 'desc')->findAll();
-
-		$userModel = new UserModel();
-
-		$userMap = [];
-		foreach ($userModel->findAll() as $user) {
-			$userMap[$user['id']] = $user;
-		}
-
-		$kategoriModel = new KategoriModel();
-		$kategoriMap = [];
-		foreach ($kategoriModel->findAll() as $kategori) {
-			$kategoriMap[$kategori['id']] = $kategori;
-		}
-
-		$pengunjungModel = new PengunjungModel();
-		$pengunjungMap = [];
-		foreach ($pengunjungModel->findAll() as $pengunjung) {
-			$pengunjungMap[$pengunjung['berita_id']] = $pengunjung;
-		}
-
+		//where('status', '1')->orderBy('created_at', 'desc')->findAll()
 		$data = [
-			'title' => 'Dashboard Cek Jabar Berita Terupdate',
-			'beritaData' => $beritaData,
-			'userMap' => $userMap,
-			'kategoriMap' => $kategoriMap,
+			'title' => 'Home',
+			'beritaData' => $this->beritaModel,
+			'userMap' => $this->userMap,
+			'kategoriMap' => $this->kategoriMap,
+			'pengunjungMap' => $this->pengunjungMap,
+			'beritaTrending' => $this->beritaTrending,
+			'komentarCount' => $this->komentarCount,
+			'kategoriData' => $this->kategoriModel,
+			'tagData' => $this->tagModel
 		];
 		return view('CekJabar/Pages/Home', $data);
 	}
@@ -86,7 +64,8 @@ class Home extends BaseController
 	public function contact()
 	{
 		$data = [
-			'title' => 'Contact'
+			'title' => 'Contact',
+			'beritaTrending' => $this->beritaTrending,
 		];
 		return view('CekJabar/Pages/Contact', $data);
 	}
@@ -94,7 +73,8 @@ class Home extends BaseController
 	public function about()
 	{
 		$data = [
-			'title' => 'About'
+			'title' => 'About',
+			'beritaTrending' => $this->beritaTrending,
 		];
 		return view('CekJabar/Pages/About', $data);
 	}
@@ -102,7 +82,8 @@ class Home extends BaseController
 	public function blank_pages()
 	{
 		$data = [
-			'title' => 'Halaman Tidak Ditemukan'
+			'title' => 'Halaman Tidak Ditemukan',
+			'beritaTrending' => $this->beritaTrending,
 		];
 		return view('CekJabar/Pages/404', $data);
 	}

@@ -47,7 +47,7 @@ $segment2 = isset($segments[1]) ? $segments[1] : '';
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="<?= base_url('berita'); ?>" class="nav-link <?= $segment2 === 'list' ? 'active' : ''; ?>">
+                            <a href="<?= base_url('berita'); ?>" class="nav-link <?= $segment2 === '' ? 'active' : ''; ?>">
                                 <i class="fas fa-newspaper nav-icon"></i>
                                 <p>Semua</p>
                             </a>

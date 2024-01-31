@@ -3,17 +3,13 @@
 
 <!--::::: ARCHIVE AREA START :::::::-->
 <div class="archives layout3 post post1 padding-top-30">
+    <div class="space-30"></div>
     <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <div class="bridcrumb"> <a href="#">Home</a> / Search / Features</div>
-            </div>
-        </div>
-        <div class="space-30"></div>
+
         <div class="row">
             <div class="col-md-6 col-lg-8">
                 <div class="business3 padding30 white_bg border-radious5 mb30">
-                    <h5 class="mb-4">Search: <a href="#">.....</a></h5>
+                    <h5 class="mb-4">Search: <a href="javascript:void()"><?= $_GET['query']; ?></a></h5>
                     <div class="single_post post_type12 type20 mb30">
                         <div class="post_img">
                             <div class="img_wrap  border-radious5">
@@ -240,10 +236,12 @@
                     </div> <a href="#" class="showmore">Show more</a>
                 </div>
             </div>
-            <div class="col-md-6 col-lg-4">
-                <div class="finance mb30 white_bg border-radious5 shadow7 padding20">
+
+            <!-- Widget Rekomendasi Berita -->
+            <div class="col-md-6 col-lg-4 mt-2">
+                <div class="finance mb30 white_bg border-radious5 shadow7 padding20 ">
                     <div class="heading">
-                        <h3 class="widget-title">Opinion News</h3>
+                        <h3 class="widget-title">Rekomendasi</h3>
                     </div>
                     <div class="single_post mb30 type18">
                         <div class="post_img">
@@ -258,16 +256,12 @@
                             <div class="space-10"></div>
                             <p class="post-p">The property, complete with seates screening from room amphitheater pond with sandy</p>
                             <ul class="mt10 like_cm">
-                                <li><a href="#"><i class="far fa-eye"></i> 6745</a>
-                                </li>
-                                <li><a href="#"><i class="far fa-heart"></i> 6745</a>
-                                </li>
-                                <li><a href="#"><i class="fas fa-share"></i> 6745</a>
-                                </li>
+                                <li><a href="#"><i class="far fa-eye"></i> 6745</a></li>
+                                <li><a href="#"><i class="far fa-comment"></i> 6745</a></li>
                             </ul>
                         </div>
                     </div>
-                    <div class="single_post type18">
+                    <div class="single_post mb30 type18">
                         <div class="post_img">
                             <a href="#">
                                 <img src="assets/cekjabar/img/feature/finance1.jpg" alt="">
@@ -280,17 +274,12 @@
                             <div class="space-10"></div>
                             <p class="post-p">The property, complete with seates screening from room amphitheater pond with sandy</p>
                             <ul class="mt10 like_cm">
-                                <li><a href="#"><i class="far fa-eye"></i> 6745</a>
-                                </li>
-                                <li><a href="#"><i class="far fa-heart"></i> 6745</a>
-                                </li>
-                                <li><a href="#"><i class="fas fa-share"></i> 6745</a>
-                                </li>
+                                <li><a href="#"><i class="far fa-eye"></i> 6745</a></li>
+                                <li><a href="#"><i class="far fa-comment"></i> 6745</a></li>
                             </ul>
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
     </div>

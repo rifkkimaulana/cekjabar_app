@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title><?= $title; ?></title>
+    <title><?= $title . ' | CEKJABAR'; ?></title>
     <!-- META -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -20,13 +20,13 @@
 </head>
 
 <body class="theme-4">
-    <!--::::: PRELOADER START :::::::-->
+    <!--::::: PRELOADER START :::::::
     <div class="preloader v4">
         <div>
             <div class="nb-spinner"></div>
         </div>
     </div>
-    <!--::::: PRELOADER END :::::::-->
+    ::::: PRELOADER END :::::::-->
     <?= $this->include('CekJabar/Layout/Header'); ?>
     <?= $this->include('CekJabar/Layout/Menu'); ?>
     <?= $this->renderSection('content'); ?>
