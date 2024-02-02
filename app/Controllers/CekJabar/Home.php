@@ -4,6 +4,8 @@ namespace App\Controllers\CekJabar;
 
 class Home extends BaseController
 {
+
+
 	public function index()
 	{
 		$formatTanggalIndonesia = function ($tanggal) {
@@ -53,19 +55,38 @@ class Home extends BaseController
 		return view('CekJabar/Pages/Search', $data);
 	}
 
-	public function filter()
+	public function kategori($kategori)
 	{
+		$kategoriFilter = $this->kategoriModel->where('slug', $kategori)->first();
 		$data = [
-			'title' => 'Contact'
+			'title' => 'Contact',
+			'kategoriFilter' => $kategoriFilter,
+
+			// *
+			'beritaData' => $this->beritaModel,
+			'userMap' => $this->userMap,
+			'kategoriMap' => $this->kategoriMap,
+			'pengunjungMap' => $this->pengunjungMap,
+			'beritaTrending' => $this->beritaTrending,
+			'komentarCount' => $this->komentarCount,
+			'kategoriData' => $this->kategoriModel,
+			'tagData' => $this->tagModel
 		];
-		return view('CekJabar/Pages/Filter', $data);
+		return view('CekJabar/Pages/KategoriFilter', $data);
 	}
 
 	public function contact()
 	{
 		$data = [
 			'title' => 'Contact',
+			'beritaData' => $this->beritaModel,
+			'userMap' => $this->userMap,
+			'kategoriMap' => $this->kategoriMap,
+			'pengunjungMap' => $this->pengunjungMap,
 			'beritaTrending' => $this->beritaTrending,
+			'komentarCount' => $this->komentarCount,
+			'kategoriData' => $this->kategoriModel,
+			'tagData' => $this->tagModel
 		];
 		return view('CekJabar/Pages/Contact', $data);
 	}
@@ -74,7 +95,14 @@ class Home extends BaseController
 	{
 		$data = [
 			'title' => 'About',
+			'beritaData' => $this->beritaModel,
+			'userMap' => $this->userMap,
+			'kategoriMap' => $this->kategoriMap,
+			'pengunjungMap' => $this->pengunjungMap,
 			'beritaTrending' => $this->beritaTrending,
+			'komentarCount' => $this->komentarCount,
+			'kategoriData' => $this->kategoriModel,
+			'tagData' => $this->tagModel
 		];
 		return view('CekJabar/Pages/About', $data);
 	}

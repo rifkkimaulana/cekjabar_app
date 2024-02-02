@@ -38,25 +38,25 @@ class BaseController extends Controller
 
 	protected $beritaTrending = [];
 
-	// add public kategori and tag
-	protected $kategoriModel = [];
-	protected $tagModel = [];
-
-	// add komentar count
-	protected $komentarCount = [];
-
-	// add pengunjungMap
-	protected $pengunjungMap = [];
-
-	// add kategoriMap
-	protected $kategoriMap = [];
-
-	// add userMap
-	protected $userMap = [];
-
-	// add BeritaModel 
+	// insert beritaModel
 	protected $beritaModel = [];
 
+	// Insert kategoriModel and kategoriMap
+	protected $kategoriModel;
+	protected $kategoriMap;
+
+	// insert pengunjungModel and PengunjungMap
+	protected $pengunjungModel;
+	protected $pengunjungMap;
+
+	// Insert komentarCount
+	protected $komentarCount;
+
+	// Insert userMap
+	protected $userMap;
+
+	// Insert tagModel
+	protected $tagModel = [];
 	/**
 	 * Constructor.
 	 */
@@ -79,40 +79,39 @@ class BaseController extends Controller
 			->groupBy('tb_berita.id')
 			->orderBy('total_kunjungan', 'desc');
 
+		// kategotiModel
 		$this->kategoriModel = new KategoriModel();
-		$this->tagModel = new TagModel();
+		$this->kategoriMap = [];
+		foreach ($this->kategoriModel->findAll() as $kategori) {
+			$this->kategoriMap[$kategori['id']] = $kategori;
+		}
+
+		// Pengunjung Map
+		$this->pengunjungModel = new PengunjungModel();
+		$this->pengunjungMap = [];
+		foreach ($this->pengunjungModel->findAll() as $pengunjung) {
+			$this->pengunjungMap[$pengunjung['berita_id']] = $pengunjung;
+		}
 
 		// Komentar Data Count
 		$komentarModel = new KomentarModel();
 		$this->komentarCount = [];
 		foreach ($komentarModel->findAll() as $komentar) {
 			$beritaId = $komentar['berita_id'];
-			if (!isset($komentarCount[$beritaId])) {
-				$komentarCount[$beritaId] = 1;
+			if (!isset($this->komentarCount[$beritaId])) {
+				$this->komentarCount[$beritaId] = 1;
 			} else {
-				$komentarCount[$beritaId]++;
+				$this->komentarCount[$beritaId]++;
 			}
-		}
-
-		// Pengunjung Map
-		$pengunjungModel = new PengunjungModel();
-		$this->pengunjungMap = [];
-		foreach ($pengunjungModel->findAll() as $pengunjung) {
-			$pengunjungMap[$pengunjung['berita_id']] = $pengunjung;
-		}
-
-		// Kategori Map
-		$kategoriModel = new KategoriModel();
-		$this->kategoriMap = [];
-		foreach ($kategoriModel->findAll() as $kategori) {
-			$kategoriMap[$kategori['id']] = $kategori;
 		}
 
 		// User Map
 		$userModel = new UserModel();
 		$this->userMap = [];
 		foreach ($userModel->findAll() as $user) {
-			$userMap[$user['id']] = $user;
+			$this->userMap[$user['id']] = $user;
 		}
+
+		$this->tagModel = new TagModel();
 	}
 }
