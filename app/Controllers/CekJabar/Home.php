@@ -75,6 +75,26 @@ class Home extends BaseController
 		return view('CekJabar/Pages/KategoriFilter', $data);
 	}
 
+	public function tag($tag)
+	{
+		$kategoriFilter = $this->tagModel->where('slug', $tag)->first();
+		$data = [
+			'title' => 'Contact',
+			'tagFilter' => $kategoriFilter,
+
+			// *
+			'beritaData' => $this->beritaModel,
+			'userMap' => $this->userMap,
+			'kategoriMap' => $this->kategoriMap,
+			'pengunjungMap' => $this->pengunjungMap,
+			'beritaTrending' => $this->beritaTrending,
+			'komentarCount' => $this->komentarCount,
+			'kategoriData' => $this->kategoriModel,
+			'tagData' => $this->tagModel
+		];
+		return view('CekJabar/Pages/TagFilter', $data);
+	}
+
 	public function contact()
 	{
 		$data = [

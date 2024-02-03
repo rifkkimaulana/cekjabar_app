@@ -41,6 +41,7 @@ $routes->group('/', ['namespace' => 'App\Controllers\CekJabar'], function ($rout
 	$routes->get('blank_pages', 'Home::blank_pages');
 	$routes->get('search', 'Home::search');
 	$routes->get('kategori/(:any)', 'Home::kategori/$1');
+	$routes->get('tag/(:any)', 'Home::tag/$1');
 });
 
 // Authentication Index

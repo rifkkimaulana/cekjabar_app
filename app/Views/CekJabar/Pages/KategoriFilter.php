@@ -7,7 +7,7 @@
 		<div class="space-30"></div>
 		<div class="row">
 			<div class="col-12">
-				<div class="bridcrumb"> <a href="#">Home</a> / Kategori / <?= $kategoriFilter['nama_kategori']; ?></div>
+				<div class="bridcrumb"> <a href="<?= base_url('/'); ?>">Home</a> / Kategori / <?= $kategoriFilter['nama_kategori']; ?></div>
 			</div>
 		</div>
 		<div class="row">

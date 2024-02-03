@@ -56,7 +56,7 @@ class BaseController extends Controller
 	protected $userMap;
 
 	// Insert tagModel
-	protected $tagModel = [];
+	protected $tagModel;
 	/**
 	 * Constructor.
 	 */
