@@ -49,7 +49,7 @@ $segment2 = isset($segments[1]) ? $segments[1] : '';
                         <li class="nav-item">
                             <a href="<?= base_url('berita'); ?>" class="nav-link <?= $segment2 === '' ? 'active' : ''; ?>">
                                 <i class="fas fa-newspaper nav-icon"></i>
-                                <p>Semua</p>
+                                <p>Berita List</p>
                             </a>
                         </li>
                     </ul>
@@ -82,7 +82,7 @@ $segment2 = isset($segments[1]) ? $segments[1] : '';
                         <li class="nav-item">
                             <a href="<?= base_url('komentar'); ?>" class="nav-link <?= $segment2 === 'komentar' ? 'active' : ''; ?>">
                                 <i class="fas fa-comment-alt nav-icon"></i>
-                                <p>Semua Komentar</p>
+                                <p>Komentar List</p>
                             </a>
                         </li>
                     </ul>

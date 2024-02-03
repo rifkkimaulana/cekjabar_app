@@ -21,7 +21,7 @@
                                     <tr>
                                         <th class="text-center" style="padding: 10px;">No</th>
                                         <th class="text-center" style="padding: 10px;">Kategori</th>
-                                        <th class="text-center" style="padding: 10px;">Jenis</th>
+                                        <th class="text-center" style="padding: 10px;">Keterangan</th>
 
                                         <?php if (session('hak_akses') === 'administrator') { ?>
                                             <th class="text-center" style="padding: 10px;">Aksi</th>
@@ -35,7 +35,7 @@
                                         <tr>
                                             <td class="text-center"><?= $no++; ?></td>
                                             <td><?= $kategori['nama_kategori'] ?></td>
-                                            <td class="text-center"><?= $kategori['jenis_kategori'] ?></td>
+                                            <td class="text-center"><?= substr($kategori['keterangan'], 0, 50) . '...'; ?></td>
 
                                             <?php if (session('hak_akses') === 'administrator') { ?>
                                                 <td class="text-center">
@@ -71,13 +71,6 @@
             </div>
             <form action="<?= base_url('berita/kategori/tambah'); ?>" method="post">
                 <div class="modal-body">
-                    <div class="form-group">
-                        <label for="jenis_kategori_ubah">Jenis Kategori</label>
-                        <select name="jenis_kategori" id="jenis_kategori_ubah" class="form-control">
-                            <option value="Kategori Utama">Kategori Utama</option>
-                            <option value="Sub Kategori">Sub Kategori</option>
-                        </select>
-                    </div>
                     <div class="form-group">
                         <label for="nama_kategori_tambah">Nama Kategori</label>
                         <input type="text" id="nama_kategori_tambah" class="form-control" name="nama_kategori">
@@ -130,14 +123,6 @@
                 <form method="post" action="<?= base_url('berita/kategori/ubah'); ?>">
                     <div class="modal-body">
                         <input type="hidden" class="form-control" name="id" value="<?= $kategori['id'] ?>">
-
-                        <div class="form-group">
-                            <label for="jenis_kategori_ubah">Jenis Kategori</label>
-                            <select name="jenis_kategori" id="jenis_kategori_ubah" class="form-control">
-                                <option value="Kategori Utama" <?= ($kategori['jenis_kategori'] === 'Kategori Utama') ? 'selected' : ' '; ?>>Kategori Utama</option>
-                                <option value="Sub Kategori" <?= ($kategori['jenis_kategori'] === 'Sub Kategori') ? 'selected' : ' '; ?>>Sub Kategori</option>
-                            </select>
-                        </div>
                         <div class="form-group">
                             <label for="nama_kategori_tambah">Nama Kategori</label>
                             <input type="text" id="nama_kategori_tambah" class="form-control" name="nama_kategori" value="<?= $kategori['nama_kategori']; ?>">

@@ -31,8 +31,8 @@
                                                 <td class="text-center">
                                                     <input type="checkbox" name="selected_items[]" class="checkbox-item" value="<?= $komentar['id']; ?>">
                                                 </td>
-                                                <td class="text-center"><?= $artikelMap[$komentar['artikel_id']]['judul']; ?></td>
-                                                <td class="text-center"><?= $komentar['komentar']; ?></td>
+                                                <td class="text-center"><?= $artikelMap[$komentar['berita_id']]['judul']; ?></td>
+                                                <td class="text-center"><?= $komentar['isi_komentar']; ?></td>
                                                 <td class="text-center"><?= $komentar['created_at']; ?></td>
                                             </tr>
                                         <?php endforeach; ?>
