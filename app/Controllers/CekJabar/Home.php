@@ -4,8 +4,6 @@ namespace App\Controllers\CekJabar;
 
 class Home extends BaseController
 {
-
-
 	public function index()
 	{
 		$formatTanggalIndonesia = function ($tanggal) {
@@ -46,7 +44,7 @@ class Home extends BaseController
 		$beritaViewAfter = $this->beritaModel->where('id >', $beritaView['id'])->orderBy('id', 'ASC')->first();
 
 		$data = [
-			'title' => $beritaView['judul'] . ' | Cek Jabar',
+			'title' => $beritaView['judul'],
 			'beritaView' => $beritaView,
 			'tagMap' => $this->tagMap,
 			'beritaViewBefore' => $beritaViewBefore,
@@ -77,7 +75,7 @@ class Home extends BaseController
 	{
 		$kategoriFilter = $this->kategoriModel->where('slug', $kategori)->first();
 		$data = [
-			'title' => 'Contact',
+			'title' => 'Kategori',
 			'kategoriFilter' => $kategoriFilter,
 
 			// *
@@ -97,7 +95,7 @@ class Home extends BaseController
 	{
 		$tagFilter = $this->tagModel->where('slug', $tag)->first();
 		$data = [
-			'title' => 'Contact',
+			'title' => 'Tag',
 			'tagFilter' => $tagFilter,
 
 			// *

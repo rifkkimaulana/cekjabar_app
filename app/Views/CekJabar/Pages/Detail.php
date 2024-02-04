@@ -217,7 +217,7 @@
 							<div class="space-10"></div>
 							<p class="post-p"><?= substr(strip_tags($trending['isi']), 0, 89) . '...'; ?> </p>
 							<div class="space-10"></div>
-							<div class="meta3"> <a href="<?= base_url('kategori/', $kategoriMap[$trending['kategori_ids']]['nama_kategori']); ?>"><?= strtoupper($kategoriMap[$trending['kategori_ids']]['nama_kategori']); ?></a>
+							<div class="meta3"> <a href="<?= base_url('kategori/', $kategoriMap[$trending['kategori_ids']]['slug']); ?>"><?= strtoupper($kategoriMap[$trending['kategori_ids']]['nama_kategori']); ?></a>
 								<a href="<?= base_url($trending['slug']); ?>">March 26, 2020</a>
 							</div>
 						</div>

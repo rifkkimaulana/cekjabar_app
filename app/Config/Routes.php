@@ -35,7 +35,7 @@ $routes->setAutoRoute(true);
 // Dashboard Index
 $routes->group('/', ['namespace' => 'App\Controllers\CekJabar'], function ($routes) {
 	$routes->get('/', 'Home::index');
-	$routes->get('(:any)', 'Home::detail/$1');
+	$routes->get('berita/(:any)', 'Home::detail/$1');
 	$routes->get('contact', 'Home::contact');
 	$routes->get('about', 'Home::about');
 	$routes->get('blank_pages', 'Home::blank_pages');
