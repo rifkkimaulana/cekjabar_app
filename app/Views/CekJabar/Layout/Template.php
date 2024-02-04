@@ -20,13 +20,14 @@
 </head>
 
 <body class="theme-4">
-    <!--::::: PRELOADER START :::::::
+    <!--::::: PRELOADER START :::::::-->
     <div class="preloader v4">
         <div>
             <div class="nb-spinner"></div>
         </div>
     </div>
-    ::::: PRELOADER END :::::::-->
+    <!-- ::::: PRELOADER END ::::::: -->
+
     <?= $this->include('CekJabar/Layout/Header'); ?>
     <?= $this->include('CekJabar/Layout/Menu'); ?>
     <?= $this->renderSection('content'); ?>

@@ -25,7 +25,7 @@
                             <div class="single_post post_type3 xs-mb90 post_type15 mb30">
                                 <div class="post_img border-radious5">
                                     <div class="img_wrap">
-                                        <a href="<?= base_url($berita['slug']); ?>">
+                                        <a href="<?= base_url('berita/' . $berita['slug']); ?>">
                                             <img src="<?= base_url('assets/image/berita/' . $berita['gambar']); ?>" alt="<?= $berita['judul']; ?>">
                                         </a>
                                     </div> <span class="tranding border_tranding">
@@ -34,23 +34,23 @@
                                 <div class="single_post_text">
                                     <div class="row">
                                         <div class="col-9 align-self-cnter">
-                                            <div class="meta3"> <a href="<?= $tagMap[$berita['tag_ids']]['slug']; ?>"><?= strtoupper($tagMap[$berita['kategori_ids']]['nama_tag']); ?></a>
-                                                <a href="<?= $berita['slug']; ?>">March 26, 2020</a>
+                                            <div class="meta3"> <a href="<?= $tagMap[$berita['tag_ids']]['slug']; ?>"><?= strtoupper($tagMap[$berita['tag_ids']]['nama_tag']); ?></a>
+                                                <a href="<?= base_url('berita/' . $berita['slug']); ?>">March 26, 2020</a>
                                             </div>
                                         </div>
                                         <div class="col-3 align-self-cnter">
                                             <div class="share_meta4 text-right">
                                                 <ul class="inline">
-                                                    <li><a href="<?= $berita['slug']; ?>"><i class="far fa-bookmark"></i></a>
+                                                    <li><a href="<?= base_url('berita/' . $berita['slug']); ?>"><i class="far fa-bookmark"></i></a>
                                                     </li>
-                                                    <li><a href="<?= $berita['slug']; ?>"><i class="fas fa-share"></i></a>
+                                                    <li><a href="<?= base_url('berita/' . $berita['slug']); ?>"><i class="fas fa-share"></i></a>
                                                     </li>
                                                 </ul>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="space-5"></div>
-                                    <h4><a href="<?= $berita['slug']; ?>"><?= $berita['judul']; ?></a></h4>
+                                    <h4><a href="<?= base_url('berita/' . $berita['slug']); ?>"><?= $berita['judul']; ?></a></h4>
                                     <div class="space-10"></div>
                                     <p class="post-p"><?= substr(strip_tags($berita['isi']), 0, 100) . '...'; ?></p>
                                 </div>
@@ -87,20 +87,20 @@
                     <?php foreach ($beritaData->orderBy('RAND()')->findAll(3) as $berita) { ?>
                         <div class="single_post mb30 type18">
                             <div class="post_img">
-                                <a href="<?= base_url($berita['slug']); ?>">
+                                <a href="<?= base_url('berita/' . $berita['slug']); ?>">
                                     <img src="<?= base_url('assets/image/berita/' . $berita['gambar']); ?>" alt="<?= $berita['judul']; ?>">
                                 </a> <span class="batch3 date">
                                     April 26, 2020
                                 </span>
                             </div>
                             <div class="single_post_text py0">
-                                <h4><a href="<?= base_url($berita['slug']); ?>"><?= $berita['judul']; ?></a></h4>
+                                <h4><a href="<?= base_url('berita/' . $berita['slug']); ?>"><?= $berita['judul']; ?></a></h4>
                                 <div class="space-10"></div>
                                 <p class="post-p"><?= substr(strip_tags($berita['isi']), 0, 60) . '...'; ?></p>
                                 <ul class="mt10 like_cm">
-                                    <li><a href="<?= base_url($berita['slug']); ?>"><i class="far fa-eye"></i> <?= $pengunjungMap[$berita['id']]['jumlah_kunjungan'] ?? 0; ?></a>
+                                    <li><a href="<?= base_url('berita/' . $berita['slug']); ?>"><i class="far fa-eye"></i> <?= $pengunjungMap[$berita['id']]['jumlah_kunjungan'] ?? 0; ?></a>
                                     </li>
-                                    <li><a href="<?= base_url($berita['slug']); ?>"><i class="far fa-comment"></i> <?= $komentarCount[$berita['id']] ?? 0; ?></a>
+                                    <li><a href="<?= base_url('berita/' . $berita['slug']); ?>"><i class="far fa-comment"></i> <?= $komentarCount[$berita['id']] ?? 0; ?></a>
                                     </li>
                                 </ul>
                             </div>

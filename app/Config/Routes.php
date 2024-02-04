@@ -33,8 +33,9 @@ $routes->setAutoRoute(true);
 // route since we don't have to scan directories.
 
 // Dashboard Index
+$routes->get('/', 'Home::index');
+
 $routes->group('/', ['namespace' => 'App\Controllers\CekJabar'], function ($routes) {
-	$routes->get('/', 'Home::index');
 	$routes->get('berita/(:any)', 'Home::detail/$1');
 	$routes->get('contact', 'Home::contact');
 	$routes->get('about', 'Home::about');

@@ -19,7 +19,7 @@
                                         <div class="trancarousel owl-carousel nav_style1">
                                             <?php foreach ($beritaTrending->findAll(20) as $trending) { ?>
                                                 <div class="trancarousel_item">
-                                                    <p><a href="<?= base_url($trending['slug']); ?>"><?= $trending['judul']; ?></a></p>
+                                                    <p><a href="<?= base_url('berita/' . $trending['slug']); ?>"><?= $trending['judul']; ?></a></p>
                                                 </div>
                                             <?php } ?>
                                         </div>

@@ -61,11 +61,11 @@
                                 <?php foreach ($beritaTrending->findAll(3) as $trending) { ?>
                                     <div class="single_more_news">
                                         <p class="meta"><?= strtoupper($kategoriMap[$trending['kategori_ids']]['nama_kategori']); ?></p>
-                                        <a href="<?= base_url($trending['slug']); ?>"><?= $trending['judul']; ?></a>
+                                        <a href="<?= base_url('berita/' . $trending['slug']); ?>"><?= $trending['judul']; ?></a>
                                         <p><?= substr(strip_tags($trending['isi']), 0, 89) . '...'; ?></p>
                                         <ul class="mt20 like_cm">
-                                            <li><a href="<?= base_url($trending['slug']); ?>"><i class="far fa-eye"></i> <?= $pengunjungMap[$trending['id']]['jumlah_kunjungan'] ?? 0; ?></a></li>
-                                            <li><a href="<?= base_url($trending['slug']); ?>"><i class="far fa-comment"></i> <?= $komentarCount[$trending['id']] ?? 0; ?></a></li>
+                                            <li><a href="<?= base_url('berita/' . $trending['slug']); ?>"><i class="far fa-eye"></i> <?= $pengunjungMap[$trending['id']]['jumlah_kunjungan'] ?? 0; ?></a></li>
+                                            <li><a href="<?= base_url('berita/' . $trending['slug']); ?>"><i class="far fa-comment"></i> <?= $komentarCount[$trending['id']] ?? 0; ?></a></li>
                                         </ul>
                                     </div>
                                     <div class="space-15"></div>

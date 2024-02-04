@@ -85,8 +85,6 @@
 							}
 						}
 						?>
-
-
 					</ul>
 				</div>
 				<div class="space-40"></div>
@@ -98,7 +96,7 @@
 							<?php if ($beritaViewBefore) : ?>
 								<div class="next_prv_single border_left3">
 									<p>PREVIOUS NEWS</p>
-									<h3><a href="<?= base_url($beritaViewBefore['slug']); ?>"><?= substr($beritaViewBefore['judul'], 0, 50) . '... '; ?></a></h3>
+									<h3><a href="<?= base_url('berita/' . $beritaViewBefore['slug']); ?>"><?= substr($beritaViewBefore['judul'], 0, 50) . '... '; ?></a></h3>
 								</div>
 							<?php endif; ?>
 						</div>
@@ -106,7 +104,7 @@
 							<?php if ($beritaViewAfter) : ?>
 								<div class="next_prv_single border_left3">
 									<p>NEXT NEWS</p>
-									<h3><a href="<?= base_url($beritaViewAfter['slug']); ?>"><?= substr($beritaViewAfter['judul'], 0, 50) . '... '; ?></a></h3>
+									<h3><a href="<?= base_url('berita/' . $beritaViewAfter['slug']); ?>"><?= substr($beritaViewAfter['judul'], 0, 50) . '... '; ?></a></h3>
 								</div>
 							<?php endif; ?>
 						</div>
@@ -118,68 +116,41 @@
 			<div class="col-md-6 col-lg-4">
 				<div class="finance mb30 white_bg border-radious5 shadow7 padding20">
 					<div class="heading">
-						<h3 class="widget-title">Opinion News</h3>
+						<h3 class="widget-title">Rekomendasi</h3>
 					</div>
-					<div class="single_post mb30 type18">
-						<div class="post_img">
-							<a href="#">
-								<img src="assets/cekjabar/img/feature/finance1.jpg" alt="">
-							</a> <span class="batch3 date">
-								April 26, 2020
-							</span>
+					<?php foreach ($beritaData->orderBy('RAND()')->findAll(3) as $berita) { ?>
+						<div class="single_post mb30 type18">
+							<div class="post_img">
+								<a href="<?= base_url('berita/' . $berita['slug']); ?>">
+									<img src="<?= base_url('assets/image/berita/' . $berita['gambar']); ?>" alt="<?= $berita['judul']; ?>">
+								</a> <span class="batch3 date">
+									April 26, 2020
+								</span>
+							</div>
+							<div class="single_post_text py0">
+								<h4><a href="<?= base_url('berita/' . $berita['slug']); ?>"><?= $berita['judul']; ?></a></h4>
+								<div class="space-10"></div>
+								<p class="post-p"><?= substr(strip_tags($berita['isi']), 0, 60) . '...'; ?></p>
+								<ul class="mt10 like_cm">
+									<li><a href="<?= base_url('berita/' . $berita['slug']); ?>"><i class="far fa-eye"></i> <?= $pengunjungMap[$berita['id']]['jumlah_kunjungan'] ?? 0; ?></a>
+									</li>
+									<li><a href="<?= base_url('berita/' . $berita['slug']); ?>"><i class="far fa-comment"></i> <?= $komentarCount[$berita['id']] ?? 0; ?></a>
+									</li>
+								</ul>
+							</div>
 						</div>
-						<div class="single_post_text py0">
-							<h4><a href="post1.html">Copa America: Luis Suarez from devastated US</a></h4>
-							<div class="space-10"></div>
-							<p class="post-p">The property, complete with seates screening from room amphitheater pond with sandy</p>
-							<ul class="mt10 like_cm">
-								<li><a href="#"><i class="far fa-eye"></i> 6745</a>
-								</li>
-								<li><a href="#"><i class="far fa-heart"></i> 6745</a>
-								</li>
-								<li><a href="#"><i class="fas fa-share"></i> 6745</a>
-								</li>
-							</ul>
-						</div>
-					</div>
-					<div class="single_post type18">
-						<div class="post_img">
-							<a href="#">
-								<img src="assets/cekjabar/img/feature/finance1.jpg" alt="">
-							</a> <span class="batch3 date">
-								April 26, 2020
-							</span>
-						</div>
-						<div class="single_post_text py0">
-							<h4><a href="post1.html">Copa America: Luis Suarez from devastated US</a></h4>
-							<div class="space-10"></div>
-							<p class="post-p">The property, complete with seates screening from room amphitheater pond with sandy</p>
-							<ul class="mt10 like_cm">
-								<li><a href="#"><i class="far fa-eye"></i> 6745</a>
-								</li>
-								<li><a href="#"><i class="far fa-heart"></i> 6745</a>
-								</li>
-								<li><a href="#"><i class="fas fa-share"></i> 6745</a>
-								</li>
-							</ul>
-						</div>
-					</div>
+					<?php } ?>
 				</div>
 				<div class="category4 mb30 border-radious5 shadow7 white_bg padding20">
-					<h3 class="widget-title">Categories</h3>
+					<h3 class="widget-title">Kategori</h3>
 					<ul>
-						<li><a href="#">Restaurent<i class="fas fa-play"></i></a>
-						</li>
-						<li><a href="#">Intertainment<i class="fas fa-play"></i></a>
-						</li>
-						<li><a href="#">Sports<i class="fas fa-play"></i></a>
-						</li>
-						<li><a href="#">Business<i class="fas fa-play"></i></a>
-						</li>
-						<li><a href="#">Financial<i class="fas fa-play"></i></a>
-						</li>
-						<li><a href="#">Business<i class="fas fa-play"></i></a>
-						</li>
+						<?php foreach ($kategoriData->groupBy('RAND()')->findAll(5) as $kt) {
+						?>
+							<li>
+								<a href="<?= base_url('kategori/' . $kt['slug']); ?>"><?= $kt['nama_kategori']; ?><i class="fas fa-play"></i></a>
+							</li>
+						<?php } ?>
+
 					</ul>
 				</div>
 			</div>
@@ -187,7 +158,9 @@
 	</div>
 </div>
 <!--::::: ARCHIVE AREA END :::::::-->
+
 <div class="space-60"></div>
+
 <!--::::: LATEST BLOG AREA START :::::::-->
 <div class="theme3_bg section-padding layout3">
 	<div class="container">
@@ -205,21 +178,34 @@
 					<div class="single_post post_type3 shadow7 mb30 post_type15 border-radious5">
 						<div class="post_img border-radious5">
 							<div class="img_wrap">
-								<a href="<?= base_url($trending['slug']); ?>">
-									<img src="<?= base_url('assets/image/berita/' . $trending['gambar']); ?>" alt="">
+								<a href="<?= base_url('berita/' . $trending['slug']); ?>">
+									<img src="<?= base_url('assets/image/berita/' . $trending['gambar']); ?>" alt="<?= base_url($trending['judul']); ?>">
 								</a>
 							</div> <span class="tranding border_tranding">
 								<i class="fas fa-bolt"></i>
 							</span>
 						</div>
 						<div class="single_post_text padding20 white_bg">
-							<h4><a href="<?= base_url($trending['slug']); ?>"><?= $trending['judul']; ?></a></h4>
+							<h4><a href="<?= base_url('berita/' . $trending['slug']); ?>"><?= $trending['judul']; ?></a></h4>
 							<div class="space-10"></div>
 							<p class="post-p"><?= substr(strip_tags($trending['isi']), 0, 89) . '...'; ?> </p>
 							<div class="space-10"></div>
-							<div class="meta3"> <a href="<?= base_url('kategori/', $kategoriMap[$trending['kategori_ids']]['slug']); ?>"><?= strtoupper($kategoriMap[$trending['kategori_ids']]['nama_kategori']); ?></a>
-								<a href="<?= base_url($trending['slug']); ?>">March 26, 2020</a>
+							<div class="meta3">
+								<?php
+								$kategoriIds = explode(',', $trending['kategori_ids']);
+								if (!empty($kategoriIds)) {
+									$firstCategoryId = $kategoriIds[0];
+									if (isset($kategoriMap[$firstCategoryId])) {
+										$kategori = $kategoriMap[$firstCategoryId];
+								?>
+										<a href="<?= base_url('kategori/' . $kategori['slug']); ?>"><?= strtoupper($kategori['nama_kategori']); ?></a>
+								<?php
+									}
+								}
+								?>
+								<a href="<?= base_url('berita/' . $trending['slug']); ?>">March 26, 2020</a>
 							</div>
+
 						</div>
 					</div>
 				</div>
@@ -229,7 +215,9 @@
 	</div>
 </div>
 <!--::::: LATEST BLOG AREA END :::::::-->
+
 <div class="space-60"></div>
+
 <!--:::::  COMMENT FORM AREA START :::::::-->
 <div class="comment_form layout3">
 	<div class="container">
