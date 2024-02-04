@@ -35,22 +35,22 @@
 									<div class="row">
 										<div class="col-9 align-self-cnter">
 											<div class="meta3"> <a href="<?= $kategoriMap[$berita['kategori_ids']]['slug']; ?>"><?= strtoupper($kategoriMap[$berita['kategori_ids']]['nama_kategori']); ?></a>
-												<a href="<?= $berita['slug']; ?>">March 26, 2020</a>
+												<a href="<?= base_url($berita['slug']); ?>">March 26, 2020</a>
 											</div>
 										</div>
 										<div class="col-3 align-self-cnter">
 											<div class="share_meta4 text-right">
 												<ul class="inline">
-													<li><a href="<?= $berita['slug']; ?>"><i class="far fa-bookmark"></i></a>
+													<li><a href="<?= base_url($berita['slug']); ?>"><i class="far fa-bookmark"></i></a>
 													</li>
-													<li><a href="<?= $berita['slug']; ?>"><i class="fas fa-share"></i></a>
+													<li><a href="<?= base_url($berita['slug']); ?>"><i class="fas fa-share"></i></a>
 													</li>
 												</ul>
 											</div>
 										</div>
 									</div>
 									<div class="space-5"></div>
-									<h4><a href="<?= $berita['slug']; ?>"><?= $berita['judul']; ?></a></h4>
+									<h4><a href="<?= base_url($berita['slug']); ?>"><?= $berita['judul']; ?></a></h4>
 									<div class="space-10"></div>
 									<p class="post-p"><?= substr(strip_tags($berita['isi']), 0, 100) . '...'; ?></p>
 								</div>

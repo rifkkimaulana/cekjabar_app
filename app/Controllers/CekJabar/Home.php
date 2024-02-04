@@ -39,12 +39,30 @@ class Home extends BaseController
 		return view('CekJabar/Pages/Home', $data);
 	}
 
-	public function detail()
+	public function detail($slug)
 	{
+		$beritaView = $this->beritaModel->where('slug', $slug)->first();
+		$beritaViewBefore = $this->beritaModel->where('id <', $beritaView['id'])->orderBy('id', 'DESC')->first();
+		$beritaViewAfter = $this->beritaModel->where('id >', $beritaView['id'])->orderBy('id', 'ASC')->first();
+
 		$data = [
-			'title' => 'Contact'
+			'title' => $beritaView['judul'] . ' | Cek Jabar',
+			'beritaView' => $beritaView,
+			'tagMap' => $this->tagMap,
+			'beritaViewBefore' => $beritaViewBefore,
+			'beritaViewAfter' => $beritaViewAfter,
+
+			// *
+			'beritaData' => $this->beritaModel,
+			'userMap' => $this->userMap,
+			'kategoriMap' => $this->kategoriMap,
+			'pengunjungMap' => $this->pengunjungMap,
+			'beritaTrending' => $this->beritaTrending,
+			'komentarCount' => $this->komentarCount,
+			'kategoriData' => $this->kategoriModel,
+			'tagData' => $this->tagModel,
 		];
-		return view('CekJabar/Pages/Post', $data);
+		return view('CekJabar/Pages/Detail', $data);
 	}
 
 	public function search()
@@ -77,10 +95,10 @@ class Home extends BaseController
 
 	public function tag($tag)
 	{
-		$kategoriFilter = $this->tagModel->where('slug', $tag)->first();
+		$tagFilter = $this->tagModel->where('slug', $tag)->first();
 		$data = [
 			'title' => 'Contact',
-			'tagFilter' => $kategoriFilter,
+			'tagFilter' => $tagFilter,
 
 			// *
 			'beritaData' => $this->beritaModel,
@@ -90,7 +108,8 @@ class Home extends BaseController
 			'beritaTrending' => $this->beritaTrending,
 			'komentarCount' => $this->komentarCount,
 			'kategoriData' => $this->kategoriModel,
-			'tagData' => $this->tagModel
+			'tagData' => $this->tagModel,
+			'tagMap' => $this->tagMap
 		];
 		return view('CekJabar/Pages/TagFilter', $data);
 	}

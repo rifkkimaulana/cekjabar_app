@@ -39,7 +39,7 @@ class BaseController extends Controller
 	protected $beritaTrending = [];
 
 	// insert beritaModel
-	protected $beritaModel = [];
+	protected $beritaModel;
 
 	// Insert kategoriModel and kategoriMap
 	protected $kategoriModel;
@@ -55,8 +55,9 @@ class BaseController extends Controller
 	// Insert userMap
 	protected $userMap;
 
-	// Insert tagModel
+	// Insert tagModel and Tag Maps
 	protected $tagModel;
+	protected $tagMap;
 	/**
 	 * Constructor.
 	 */
@@ -113,5 +114,10 @@ class BaseController extends Controller
 		}
 
 		$this->tagModel = new TagModel();
+
+		$this->tagMap = [];
+		foreach ($this->tagModel->findAll() as $tag) {
+			$this->tagMap[$tag['id']] = $tag;
+		}
 	}
 }

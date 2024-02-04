@@ -7,7 +7,7 @@
         <div class="space-30"></div>
         <div class="row">
             <div class="col-12">
-                <div class="bridcrumb"> <a href="<?= base_url('/'); ?>">Home</a> / Kategori / <?= $tagFilter['nama_tag']; ?></div>
+                <div class="bridcrumb"> <a href="<?= base_url('/'); ?>">Home</a> / Tag / <?= '#' . $tagFilter['nama_tag']; ?></div>
             </div>
         </div>
         <div class="row">
@@ -15,7 +15,7 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="categories_title">
-                            <h5>Kategori: <a href="<?= base_url('tag/' . $tagFilter['slug']); ?>"><?= $tagFilter['nama_tag']; ?></a></h5>
+                            <h5>Tag: <a href="<?= base_url('tag/' . $tagFilter['slug']); ?>"><?= '#' . $tagFilter['nama_tag']; ?></a></h5>
                         </div>
                     </div>
                 </div>
@@ -34,7 +34,7 @@
                                 <div class="single_post_text">
                                     <div class="row">
                                         <div class="col-9 align-self-cnter">
-                                            <div class="meta3"> <a href="<?= $kategoriMap[$berita['kategori_ids']]['slug']; ?>"><?= strtoupper($kategoriMap[$berita['kategori_ids']]['nama_tag']); ?></a>
+                                            <div class="meta3"> <a href="<?= $tagMap[$berita['tag_ids']]['slug']; ?>"><?= strtoupper($tagMap[$berita['kategori_ids']]['nama_tag']); ?></a>
                                                 <a href="<?= $berita['slug']; ?>">March 26, 2020</a>
                                             </div>
                                         </div>
